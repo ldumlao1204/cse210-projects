@@ -57,4 +57,22 @@ public class Journal
             Console.WriteLine("File not found.");
         }
     }
+
+    public void SearchByDate(string targetDate)
+    {
+        bool found = false;
+        foreach (Entry entry in _entries)
+        {
+            if (entry._date == targetDate)
+            {
+                entry.Display();
+                found = true;
+            }
+        }
+
+        if (!found)
+        {
+            Console.WriteLine($"No entries found for {targetDate}.");
+        }
+    }
 }

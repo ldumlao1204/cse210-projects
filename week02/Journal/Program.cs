@@ -1,3 +1,5 @@
+// For creativity, I added a "Search by date" feature that allows users to find journal entries from a specific date.
+
 using System;
 
 class Program
@@ -17,7 +19,8 @@ class Program
             Console.WriteLine("2. Display");
             Console.WriteLine("3. Load");
             Console.WriteLine("4. Save");
-            Console.WriteLine("5. Quit");
+            Console.WriteLine("5. Search by date");
+            Console.WriteLine("6. Quit");
             Console.Write("What would you like to do? ");
             string choice = Console.ReadLine();
             Console.WriteLine();
@@ -60,6 +63,12 @@ class Program
                     break;
 
                 case "5":
+                    Console.Write("Enter date to search (yyyy-MM-dd): ");
+                    string searchDate = Console.ReadLine();
+                    myJournal.SearchByDate(searchDate);
+                    break;
+
+                case "6":
                     Console.WriteLine("Goodbye!");
                     running = false;
                     break;
